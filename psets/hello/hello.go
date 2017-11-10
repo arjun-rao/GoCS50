@@ -12,6 +12,15 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/*
+hello implements a program that prints out a simple greeting to the user.
+
+Usage:
+
+	$ ./hello
+	hello, world
+
+*/
 package main
 
 import "fmt"

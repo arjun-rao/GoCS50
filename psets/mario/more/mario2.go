@@ -15,36 +15,40 @@
 package main
 
 import (
-	"bufio"
 	"fmt"
-	"os"
-	"strconv"
-	"strings"
+
+	"github.com/arjun-rao/cs50/cs50"
 )
 
 // getHeight prompts the user to enter an integer, and reprompts on invalid input.
 // It returns a positive integer between 1-23.
 func getHeight() int {
-	inputReader := bufio.NewReader(os.Stdin)
 	for {
-		fmt.Print("Height: ")
-		input, _ := inputReader.ReadString('\n')
-		height, err := strconv.Atoi(strings.TrimSpace(input))
-		if err == nil && height > 0 && height < 24 {
+		height := cs50.GetInt("Height: ")
+		if height > 0 && height < 24 {
 			return height
 		}
 	}
 }
 
+// main implements the more-comfortable version of mario at
+// http://docs.cs50.net/problems/mario/more/mario.html.
 func main() {
 	// Get height from the user.
 	height := getHeight()
 	for level := height; level > 0; level-- {
-		// Add correct number of spaces before blocks in a level to a string to be printed.
-		levelString := fmt.Sprintf("%*s", level+1, "##")
+		// Add spaces & 1 # of the left half pyramid.
+		levelString := fmt.Sprintf("%*s", level, "#")
 
-		// Add remaining # blocks to the string.
+		// Add remaining # blocks of the left half pyramid.
 		for j := level; j < height; j++ {
+			levelString += "#"
+		}
+
+		// Add spaces between left & right half pyramids.
+		levelString += "  "
+		// Add remaining # blocks of the right half pyramid.
+		for j := level; j <= height; j++ {
 			levelString += "#"
 		}
 

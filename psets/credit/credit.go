@@ -12,24 +12,30 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/*
+credit implements a program that determines whether a provided credit card number is valid
+according to Luhn’s algorithm.
+
+Usage:
+
+	$ ./credit
+	Number: 378282246310005
+	AMEX
+
+*/
 package main
 
 import (
-	"bufio"
-	"fmt"
-	"os"
 	"strconv"
-	"strings"
+
+	"github.com/arjun-rao/cs50/cs50"
 )
 
 // getCreditCard prompts the user to enter a credit card number, and reprompts on invalid input.
-// It returns a valid 64 bit floating point number.
+// It returns a valid 64 bit integer number.
 func getCreditCard() (int64, string) {
-	inputReader := bufio.NewReader(os.Stdin)
 	for {
-		fmt.Print("Number: ")
-		input, _ := inputReader.ReadString('\n')
-		input = strings.TrimSpace(input)
+		input := cs50.GetString("Number: ")
 		number, err := strconv.ParseInt(input, 10, 64)
 		if err == nil && number >= 0 {
 			return number, input

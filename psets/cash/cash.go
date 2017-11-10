@@ -15,23 +15,17 @@
 package main
 
 import (
-	"bufio"
-	"fmt"
 	"math"
-	"os"
-	"strconv"
-	"strings"
+
+	"github.com/arjun-rao/cs50/cs50"
 )
 
 // getChange prompts the user to enter a float, and reprompts on invalid input.
 // It returns a valid 64 bit floating point number.
 func getChange() float64 {
-	inputReader := bufio.NewReader(os.Stdin)
 	for {
-		fmt.Print("Change: ")
-		input, _ := inputReader.ReadString('\n')
-		change, err := strconv.ParseFloat(strings.TrimSpace(input), 64)
-		if err == nil && change >= 0 {
+		change := cs50.GetFloat("Change: ")
+		if change >= 0 {
 			return change
 		}
 	}

@@ -1,6 +1,6 @@
 # Contents
 
-| Director/File |        Pset   |
+| Directory/File |        Pset   |
 | ------------- |:-------------:|
 | hello/hello.go      | [PSET 1: Hello][1] |
 | mario/mario.go      | [PSET 1: Mario][2] |
