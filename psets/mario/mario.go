@@ -12,6 +12,19 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/*
+mario implements a program that prints out a half-pyramid of a specified height, per the below.
+
+Usage:
+
+	$ ./mario
+	Height: 5
+	    ##
+	   ###
+	  ####
+	 #####
+	######
+*/
 package main
 
 import (

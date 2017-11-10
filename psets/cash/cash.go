@@ -12,6 +12,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+/*
+Cash implements a program that calculates the minimum number of coins required to give a user change.
+
+Usage:
+
+	$ ./cash
+	Change owed: 0.41
+	4
+
+*/
 package main
 
 import (
