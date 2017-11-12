@@ -27,14 +27,14 @@ package main
 import (
 	"math"
 
-	"github.com/arjun-rao/cs50/cs50"
+	"github.com/cswithgo/go50"
 )
 
 // getChange prompts the user to enter a float, and reprompts on invalid input.
 // It returns a valid 64 bit floating point number.
 func getChange() float64 {
 	for {
-		change := cs50.GetFloat("Change: ")
+		change := go50.GetFloat("Change: ")
 		if change >= 0 {
 			return change
 		}

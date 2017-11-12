@@ -17,14 +17,14 @@ package main
 import (
 	"fmt"
 
-	"github.com/arjun-rao/cs50/cs50"
+	"github.com/cswithgo/go50"
 )
 
 // getHeight prompts the user to enter an integer, and reprompts on invalid input.
 // It returns a positive integer between 1-23.
 func getHeight() int {
 	for {
-		height := cs50.GetInt("Height: ")
+		height := go50.GetInt("Height: ")
 		if height > 0 && height < 24 {
 			return height
 		}

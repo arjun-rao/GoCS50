@@ -28,14 +28,14 @@ package main
 import (
 	"strconv"
 
-	"github.com/arjun-rao/cs50/cs50"
+	"github.com/cswithgo/go50"
 )
 
 // getCreditCard prompts the user to enter a credit card number, and reprompts on invalid input.
 // It returns a valid 64 bit integer number.
 func getCreditCard() (int64, string) {
 	for {
-		input := cs50.GetString("Number: ")
+		input := go50.GetString("Number: ")
 		number, err := strconv.ParseInt(input, 10, 64)
 		if err == nil && number >= 0 {
 			return number, input
